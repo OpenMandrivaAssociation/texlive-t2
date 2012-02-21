@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-t2
 Version:	20080105
-Release:	2
+Release:	3
 Summary:	Support for using T2 encoding
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/t2
@@ -17,6 +17,7 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
+Requires(post):	texlive-tetex
 
 %description
 The T2 bundle provides a variety of separate support functions,
@@ -96,6 +97,7 @@ font support.
 %{_texmfdistdir}/tex/latex/t2/citehack.sty
 %{_texmfdistdir}/tex/latex/t2/mathtext.sty
 %{_texmfdistdir}/tex/latex/t2/misccorr.sty
+%_texmf_fmtutil_d/t2
 %doc %{_texmfdistdir}/doc/generic/t2/Makefile
 %doc %{_texmfdistdir}/doc/generic/t2/OT2uni.map
 %doc %{_texmfdistdir}/doc/generic/t2/README
@@ -151,3 +153,11 @@ font support.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_texmf_fmtutil_d}
+cat > %{buildroot}%{_texmf_fmtutil_d}/t2 <<EOF
+#
+# from t2:
+#! cyramstex pdftex language.dat -translate-file=cp227.tcx *cyramstx.ini
+#! cyrtex pdftex language.dat -translate-file=cp227.tcx *cyrtex.ini
+#! cyrtexinfo pdftex language.dat -translate-file=cp227.tcx *cyrtxinf.ini
+EOF
