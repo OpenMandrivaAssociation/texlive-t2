@@ -161,3 +161,20 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/t2 <<EOF
 #! cyrtex pdftex language.dat -translate-file=cp227.tcx *cyrtex.ini
 #! cyrtexinfo pdftex language.dat -translate-file=cp227.tcx *cyrtxinf.ini
 EOF
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 20080105-3
++ Revision: 778461
+- Rebuild after tlpobj2spec.pl bug correction.
+
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20080105-2
++ Revision: 756425
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20080105-1
++ Revision: 719631
+- texlive-t2
+- texlive-t2
+- texlive-t2
+
