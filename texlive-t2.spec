@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-t2
-Version:	20120605
-Release:	9
+Version:	20170414
+Release:	1
 Summary:	Support for using T2 encoding
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/t2
