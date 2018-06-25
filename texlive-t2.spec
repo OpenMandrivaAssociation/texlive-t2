@@ -5,7 +5,7 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-t2
-Version:	20170414
+Version:	20180530
 Release:	1
 Summary:	Support for using T2 encoding
 Group:		Publishing
